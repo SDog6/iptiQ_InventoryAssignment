@@ -28,11 +28,11 @@ namespace InventoryService
             }
         }
 
-        public bool Add(object obj)
+        public bool Add(Item obj)
         {
             if (obj != null)
             {
-                data.Insert((Item)obj);
+                data.Insert(obj);
                 loadDataFromDatabase();
                 return true;
             }
@@ -44,11 +44,11 @@ namespace InventoryService
         }
 
 
-        public bool Update(object obj,int id)
+        public bool Update(Item obj,int id)
         {
             if (obj != null)
             {
-                data.Update((Item)obj,id);
+                data.Update(obj,id);
                 loadDataFromDatabase();
                 return true;
             }
@@ -70,11 +70,11 @@ namespace InventoryService
             return temp;
         }
 
-        public bool Remove(object obj)
+        public bool Remove(Item obj)
         {
             if (obj != null)
             {
-                data.Delete((Item)obj);
+                data.Delete(obj);
                 loadDataFromDatabase();
                 return true;
             }

@@ -8,12 +8,9 @@ using System.Threading.Tasks;
 
 namespace InventoryService
 {
-    public class DbConnection
+    public abstract class DbConnection
     {
         protected static SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Daenir\Documents\GitStuff\iptiQ_InventoryAssignment\InventoryService\InventoryService\Database1.mdf;Integrated Security=True");
 
-
-        public DbConnection()
-        {}
     }
 }

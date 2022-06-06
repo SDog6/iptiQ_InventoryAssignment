@@ -10,10 +10,10 @@ namespace InventoryService
 {
     internal class InventoryData : DbConnection
     {
-        static int s = 1;
-        public void Insert(object obj)
+        private static int s = 1;
+        public void Insert(Item obj)
         {
-            Item itm = (Item)obj;
+            Item itm = obj;
             try
             {
                 // make sure in your table the id in auto-incremented
@@ -112,9 +112,9 @@ namespace InventoryService
             }
         }
 
-        public void Delete(object obj)
+        public void Delete(Item obj)
         {
-            Item stock = (Item)obj;
+            Item stock = obj;
             try
             {
                 string sql = "DELETE FROM ItemTable WHERE Id = @id";

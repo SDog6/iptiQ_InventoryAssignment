@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.0.0">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>280</x>
+      <y>376</y>
+      <w>272</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>Item
+--
+-name: string
+-quantity: int
+-price: double	
+--
++Item(string name,int quantity,double price)
++Item(int id,string name,int quantity,double price)
+--
++ &lt;&lt;Property&gt;&gt; Name: string 
++ &lt;&lt;Property&gt;&gt; Quantity: int 
++ &lt;&lt;Property&gt;&gt; Price: double </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>712</x>
+      <y>376</y>
+      <w>272</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>InventoryManager
+--
+-items: List&lt;Item&gt;
+-data: InventoryData
+--
++InventoryManager()
+--
+-loadDataFromDatabase(): void
++Add(Item obj): bool
++Update(Item obj,int id): bool
++GetAll(): List&lt;object&gt;
++Remove(Item obj): bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>808</x>
+      <y>0</y>
+      <w>120</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Abstract&gt;&gt;
+DbConnection
+--
+_#conn: SqlConnection_
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>784</x>
+      <y>160</y>
+      <w>160</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>InventoryData
+--
++Insert(Item obj): void
++Update(Item obj,int id): bool
++ReadAll(): List&lt;object&gt;
++Delete(Item obj): bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>760</x>
+      <y>648</y>
+      <w>200</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>Form1
+--
+-inventoryManager: InventoryManager
+-UpdateUI(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>544</x>
+      <y>432</y>
+      <w>184</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0...* Items
+</panel_attributes>
+    <additional_attributes>10.0;20.0;210.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>848</x>
+      <y>232</y>
+      <w>104</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1 InventoryData
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>856</x>
+      <y>48</y>
+      <w>24</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>848</x>
+      <y>520</y>
+      <w>120</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1 InventoryManager
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+</diagram>
